@@ -1,6 +1,6 @@
 # evans_template
 
-A new Flutter project.
+Evanson's Template: Clean Architecture, Flutter Bloc, get_it DI, feature-first folder structure
 
 ## Getting Started
 
