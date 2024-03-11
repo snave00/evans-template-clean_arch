@@ -4,7 +4,9 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+🤖 Upon **cloning**, make sure to **run** ```flutter pub run build_runner build``` to generate all `*.g.dart` files used in `json_serializable`.
+
+🤖 Before **pushing**, make sure to **check codes** if it follows code convention & always `fix imports`.
 
 A few resources to get you started if this is your first Flutter project:
 
