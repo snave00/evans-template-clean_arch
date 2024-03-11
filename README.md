@@ -1,6 +1,6 @@
 # evans_template
 
-Evanson's Template: Clean Architecture, Flutter Bloc, get_it DI, feature-first folder structure
+Evanson's Template: Clean Architecture, Flutter Bloc, get_it DI, go_router, feature-first folder structure
 
 ## Getting Started
 
