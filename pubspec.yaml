@@ -13,8 +13,19 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.3.11
+  google_fonts: ^6.2.0
+  flutter_bloc: ^8.1.4 # state management
+
+  # other tools
+  logger: ^1.4.0
+  intl: ^0.19.0
+  connectivity_plus: ^2.3.8
+
 
 dev_dependencies:
   flutter_test:
@@ -27,7 +38,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  # needed for flutter_localizations
+  generate: true  
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -59,6 +71,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+# to solve error on flutter_localizations:
+# ! 'Because every version of flutter_localizations from sdk depends on intl 0.18.1...'
+dependency_overrides:
+  intl: ^0.18.0
 
 # Flutter launcher icon
 flutter_launcher_icons:

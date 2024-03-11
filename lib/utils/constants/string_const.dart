@@ -1,0 +1,46 @@
+class StringConst {
+  StringConst._();
+
+  // * Shared
+  static const String appName = 'EvansTemplate';
+  static const String appVersion = 'v1.0.11.pre';
+  static const String defaultIsarName = 'backup_data_v1';
+  static const String isarVersion = 'v1.00';
+  static const String isarExtension = 'isar';
+
+  // * CTA
+  static const String next = 'Next';
+  static const String back = 'Back';
+  static const String done = 'Done';
+  static const String save = 'Save';
+  static const String proceed = 'Proceed';
+  static const String continueText = 'Continue';
+  static const String cancel = 'Cancel';
+  static const String cancelled = 'Cancelled';
+  static const String close = 'Close';
+  static const String discard = 'Discard';
+  static const String yes = 'Yes';
+  static const String no = 'No';
+  static const String edit = 'Edit';
+  static const String select = 'Select';
+  static const String search = 'Search';
+  static const String delete = 'Delete';
+  static const String deleted = 'Deleted';
+
+  // * Common Text
+  static const String loading = 'Loading...';
+  static const String success = 'Success';
+  static const String hooray = 'Hooray!';
+  static const String headsUp = 'Heads up!';
+  static const String fail = 'Fail';
+  static const String oops = 'Oops!';
+  static const String defaultText = 'Default';
+  static const String rcId = 'RC ID';
+  static const String rcIdCopied = 'RC ID Copied';
+  static const String devMode = 'Dev Mode';
+  static const String youreNowInDevMode = 'You\'re now in dev mode';
+  static const String youreAlreadyInDevMode = 'You\'re already in dev mode';
+
+  static const String zeroCurrency = '0.00';
+  static const String zero = '0';
+}

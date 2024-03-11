@@ -1,0 +1,19 @@
+{
+    "language": "English",
+    "@language": {
+        "description": "The current language"
+    },
+    "helloWorld": "Hello World",
+    "@helloWorld": {
+        "description": "A sample greeting"
+    },
+    "hello": "Hello {username}",
+    "@hello": {
+        "description": "A welcome message",
+        "placeholders": {
+            "username": {
+                "type": "String"
+            }
+        }
+    }
+}
