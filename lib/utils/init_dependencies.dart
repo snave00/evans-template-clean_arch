@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+
+import '../modules/bloc/app_bloc_observer.dart';
+import '../modules/di/injection.dart' as di;
+import '../modules/isar/isar_database_service.dart';
 
 Future<void> initDependencies() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -12,16 +17,16 @@ Future<void> initDependencies() async {
   // await RevenueCatModule().initPlatformState();
 
   // * init get_it service locator / dependency injection
-  // await di.init();
+  await di.init();
 
   // * wait it so sl<SharedPreferences>() will work on initIsar() properly
-  // await sl.allReady();
+  await di.sl.allReady();
 
   // * init isar local db
-  // await IsarDatabaseService().initIsar();
+  await IsarDatabaseService().initIsar();
 
   // * initialize bloc observer
-  // Bloc.observer = AppBlocObserver();
+  Bloc.observer = AppBlocObserver();
 
   // * initialize flutter_timezone
   // await AppTimeZone().configureLocalTimeZone();

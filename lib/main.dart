@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (ctx) => sl<UserCubit>()..init(context: context)),
+        // BlocProvider(create: (ctx) => sl<UserCubit>()..init(context: context)),
       ],
       child: _buildMaterialApp(),
     );
@@ -30,18 +30,18 @@ class MyApp extends StatelessWidget {
     // only use context.watch inside the Builder not within build function.
     return Builder(
       builder: (context) {
-        final userState = context.watch<UserCubit>().state;
+        // final userState = context.watch<UserCubit>().state;
 
         return MaterialApp.router(
           title: StringConst.appName,
-          themeMode: userState.userEntity.userSettings.themeMode,
+          // themeMode: userState.userEntity.userSettings.themeMode,
           theme: AppTheme.buildTheme(Brightness.light),
           darkTheme: AppTheme.buildTheme(Brightness.dark),
           debugShowCheckedModeBanner: false,
           supportedLocales: L10n.all,
           localeResolutionCallback: L10n.setLocaleResolutionCallback(),
           localizationsDelegates: L10n.setLocalizationDelegate(),
-          routerConfig: AppGoRouter.router,
+          // routerConfig: AppGoRouter.router,
           // locale: languageState,
           // onUnknownRoute: (settings) {
           //   return MaterialPageRoute(builder: (ctx) => const ErrorPage());

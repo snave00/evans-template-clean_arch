@@ -1,4 +1,4 @@
-import 'package:evans_template/core/application/widgets/icon/emoji_icon_widget.dart';
+import 'package:evans_template/core/presentation/widgets/icon/emoji_icon_widget.dart';
 import 'package:evans_template/utils/constants/string_const.dart';
 import 'package:evans_template/utils/constants/widget_const.dart';
 import 'package:flutter/material.dart';
