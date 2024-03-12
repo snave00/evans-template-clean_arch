@@ -32,6 +32,7 @@ class WidgetBorderRadius {
   static const double borderXL = 32.0;
 
   static const double border12 = 12.0;
+  static const double bottomAppBar = 40.0;
 }
 
 class WidgetBorderWidth {
