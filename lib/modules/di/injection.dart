@@ -1,10 +1,19 @@
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../core/presentation/cubit/user_cubit.dart';
+import '../../features/auth/presentation/cubit/auth_cubit.dart';
+import '../../features/home/cubit/home_cubit.dart';
+
 final sl = GetIt.instance;
 
 Future<void> init() async {
   // * CUBITS
+
+  sl.registerFactory(() => AuthCubit());
+  sl.registerFactory(() => UserCubit());
+  sl.registerFactory(() => HomeCubit());
+
   // user
   // sl.registerFactory(
   //   () => UserCubit(

@@ -34,7 +34,7 @@ Future<void> initDependencies() async {
   // * initialize flutter_local_notifications
   // await NotifService().initNotification();
 
-  removeSplash();
+  // removeSplash();
 }
 
 Future<void> _setOrientation() async {

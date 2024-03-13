@@ -42,6 +42,7 @@ class StringConst {
   static const String youreNowInDevMode = 'You\'re now in dev mode';
   static const String youreAlreadyInDevMode = 'You\'re already in dev mode';
   static const String and = 'and';
+  static const String pro = 'Pro';
 
   static const String zeroCurrency = '0.00';
   static const String zero = '0';
@@ -57,4 +58,11 @@ class StringConst {
       'By using this app, you agree to our ';
   static const String termsOfUse = 'Terms of Use';
   static const String privacyPolicy = 'Privacy Policy';
+
+  // * Bottom Nav Labels
+  static const String home = 'Home';
+  static const String activity = 'Activity';
+  static const String cart = 'Cart';
+  static const String messages = 'Messages';
+  static const String account = 'Account';
 }

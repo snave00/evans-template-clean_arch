@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/presentation/widgets/progress/custom_circular_progress.dart';
+
 // * Close keyboard or remove current focus node
 void closeKeyboard() {
   // FocusScope.of(context).unfocus();
@@ -7,15 +9,15 @@ void closeKeyboard() {
 }
 
 // * Shows a loading progress indicator dialog
-// Future<void> showProgressDialog({required BuildContext context}) async {
-//   await showDialog(
-//     context: context,
-//     barrierDismissible: false,
-//     builder: (ctx) {
-//       return const CustomCircularProgress();
-//     },
-//   );
-// }
+Future<void> showProgressDialog({required BuildContext context}) async {
+  await showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (ctx) {
+      return const CustomCircularProgress();
+    },
+  );
+}
 
 // * Shows an adaptive time picker for both Android & iOS
 // Future<({TimeOfDay? timeOfDay, DateTime timeSeconds})> showAdaptiveTimePicker({
