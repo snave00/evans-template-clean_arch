@@ -32,6 +32,7 @@ class WidgetBorderRadius {
   static const double borderXL = 32.0;
 
   static const double border12 = 12.0;
+  static const double bottomAppBar = 40.0;
 }
 
 class WidgetBorderWidth {
@@ -52,19 +53,24 @@ class WidgetSize {
   static const double s1 = 1.0;
   static const double s5 = 5.0;
   static const double s8 = 8.0;
+  static const double s12 = 12.0;
   static const double s16 = 16.0; // small icon size
   static const double s24 = 24.0; // medium icon size
+  static const double s26 = 26.0;
+  static const double s28 = 28.0;
   static const double s32 = 32.0; // large icon size
   static const double s40 = 40.0;
   static const double s42 = 42.0;
   static const double s48 = 48.0;
   static const double s56 = 56.0;
+  static const double s60 = 60.0;
   static const double s64 = 64.0;
   static const double s72 = 72.0;
   static const double s80 = 80.0;
   static const double s88 = 88.0;
   static const double s96 = 96.0;
   static const double s100 = 100.0;
+  static const double s140 = 140.0;
 
   static const double appBarHeight = 56.0;
 }

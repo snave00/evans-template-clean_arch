@@ -17,22 +17,41 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  flutter_native_splash: ^2.3.11
-  google_fonts: ^6.2.0
+  flutter_native_splash: ^2.3.10 #! maintain version. conflict w/ isar. error: 'Because no versions of flutter_native_splash match >2.3.11 <2.3.12 and flutter_native_splash 2.3.11 depends on js ^0.7.0. Consider downgrading your constraint on flutter_native_splash: flutter pub add flutter_native_splash:^2.3.10'
+  google_fonts: '6.1.0' # issue when upgrading https://stackoverflow.com/questions/78090711/error-type-fontfeature-not-found-flutter-google-fonts-package-error
   flutter_bloc: ^8.1.4 # state management
-
+  isar: ^3.1.0+1 # local db
+  isar_flutter_libs: ^3.1.0+1 # contains Isar Core
+  shared_preferences: ^2.2.2
+  get_it: ^7.6.7 # service locator/dependency injection
+  go_router: ^13.2.0 # navigation/router
+  
   # other tools
   logger: ^1.4.0
   intl: ^0.19.0
   connectivity_plus: ^2.3.8
-
-
+  envied: ^0.5.3
+  equatable: ^2.0.5
+  fpdart: ^1.1.0 # return 2 data types in a function. error handling
+  freezed_annotation: ^2.4.1 # annotation like @freezed
+  json_annotation: ^4.8.1 # annotation like @JsonSerializable
+  path_provider: ^2.1.2
+  font_awesome_flutter: ^10.7.0
+  flutter_svg: ^2.0.10+1
+  
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
   flutter_launcher_icons: ^0.13.1
+  build_runner: ^2.4.8 # run to generate needed file in json_serializable, hive, freezed, envied
+  envied_generator: ^0.5.3
+  isar_generator: ^3.1.0+1
+  freezed: ^2.4.7 # generate data class (copyWith, equatable, operator ==, hashCode, toString, handling de/serialization)
+  json_serializable: ^6.7.1 # convert to/from json
+ 
   
 
 
@@ -44,7 +63,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
+    # need to specify the specific folder so it will work
+    - assets/images/svg/
+    - assets/images/png/
+    - assets/configs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

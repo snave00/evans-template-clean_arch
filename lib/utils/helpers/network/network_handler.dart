@@ -1,5 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 
+import '../../../core/data/exceptions/network_exception.dart';
 import '../../logs/custom_log.dart';
 
 class NetworkHandler {
