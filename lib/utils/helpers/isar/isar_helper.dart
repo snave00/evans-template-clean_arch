@@ -1,7 +1,7 @@
 import 'package:isar/isar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../core/data/datasources/local/shared_pref_local_data_source.dart';
+import '../../../core/data/data_source/local/shared_pref_local_data_source.dart';
 import '../../../modules/di/injection.dart';
 
 class IsarHelper {

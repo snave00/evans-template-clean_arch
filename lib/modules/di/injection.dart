@@ -4,6 +4,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/presentation/cubit/user_cubit.dart';
 import '../../features/auth/presentation/cubit/auth_cubit.dart';
 import '../../features/home/cubit/home_cubit.dart';
+import '../../features/store/data/data_source/store_mock_data_source.dart';
+import '../../features/store/data/repositories/store_repo_impl.dart';
+import '../../features/store/domain/repositories/store_repo.dart';
+import '../../features/store/domain/usecases/get_stores.usecase.dart';
 
 final sl = GetIt.instance;
 
@@ -12,68 +16,28 @@ Future<void> init() async {
 
   sl.registerFactory(() => AuthCubit());
   sl.registerFactory(() => UserCubit());
-  sl.registerFactory(() => HomeCubit());
-
-  // user
-  // sl.registerFactory(
-  //   () => UserCubit(
-  //     getIsFromFreshInstallUseCase: sl(),
-  //     addInitialUserUseCase: sl(),
-  //     updateUserSettingsFromInitialSetupUseCase: sl(),
-  //     addWalletsFromSetupUseCase: sl(),
-  //     addBudgetsFromSetupUseCase: sl(),
-  //     setIsFromFreshInstallUseCase: sl(),
-  //     getUserUseCase: sl(),
-  //     updateUserUseCase: sl(),
-  //     getEmojiCategoriesUseCase: sl(),
-  //     updateThemeUseCase: sl(),
-  //     exportIsarUseCase: sl(),
-  //     importIsarUseCase: sl(),
-  //     getOfferingsUseCase: sl(),
-  //     getCustomerInfoUseCase: sl(),
-  //     purchasePackageUseCase: sl(),
-  //     restorePurchasesUseCase: sl(),
-  //     watchUserUseCase: sl(),
-  //     setReminderUseCase: sl(),
-  //     setShowTxnDescSubtitleUseCase: sl(),
-  //   ),
-  // );
+  sl.registerFactory(() => HomeCubit(
+        getStoresUseCase: sl(),
+      ));
 
   // * USECASES
-  // user
-  // sl.registerFactory(() => GetUserUseCase(userRepo: sl()));
-  // sl.registerFactory(() => AddInitialUserUseCase(userRepo: sl()));
-  // sl.registerFactory(() => UpdateUserUseCase(userRepo: sl()));
-  // sl.registerFactory(
-  //   () => UpdateUserSettingsFromInitialSetupUseCase(userRepo: sl()),
-  // );
-  // sl.registerFactory(() => GetIsFromFreshInstallUseCase(userRepo: sl()));
-  // sl.registerFactory(() => SetIsFromFreshInstallUseCase(userRepo: sl()));
-  // sl.registerFactory(() => GetIsarNameUseCase(userRepo: sl()));
-  // sl.registerFactory(() => SetIsarNameUseCase(userRepo: sl()));
-  // sl.registerFactory(() => GetIsarDirUseCase(userRepo: sl()));
-  // sl.registerFactory(() => SetIsarDirUseCase(userRepo: sl()));
-  // sl.registerFactory(() => WatchUserUseCase(userRepo: sl()));
 
-  // settings
-  // sl.registerFactory(() => UpdateThemeUseCase(settingsRepo: sl()));
+  // store
+  sl.registerFactory(() => GetStoresUseCase(storeRepo: sl()));
 
   // * REPOSITORIES
-  // user
-  // sl.registerFactory<UserRepo>(() => UserRepoImpl(
-  //       userLocalIsarDataSource: sl(),
-  //       sharedPrefLocalDataSource: sl(),
-  //     ));
 
-  // settings
-  // sl.registerFactory<SettingsRepo>(
-  //   () => SettingsRepoImpl(
-  //     userLocalIsarDataSource: sl(),
-  //     sharedPrefLocalDataSource: sl(),
-  //   ),
-  // );
+  sl.registerFactory<StoreRepo>(() => StoreRepoImpl(
+        storeMockDataSource: sl(),
+      ));
 
   // * DATA SOURCES LOCAL
+
+  // store mock data
+  sl.registerFactory<StoreMockDataSource>(
+    () => StoreMockDataSourceImpl(),
+  );
+
   // user isar
   // sl.registerFactory<UserLocalIsarDataSource>(
   //   () => UserLocalIsarDataSourceImpl(

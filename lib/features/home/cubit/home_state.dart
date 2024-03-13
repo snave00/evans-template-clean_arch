@@ -4,6 +4,7 @@ part of 'home_cubit.dart';
 class HomeState with _$HomeState {
   factory HomeState({
     required HomeStatus homeStatus,
+    required List<StoreEntity> stores,
     final String? successMessage,
     final String? errorMessage,
   }) = _HomeState;
@@ -12,5 +13,7 @@ class HomeState with _$HomeState {
 enum HomeStatus {
   initial,
   loading,
+  getStoresSuccess,
+  success,
   failure,
 }

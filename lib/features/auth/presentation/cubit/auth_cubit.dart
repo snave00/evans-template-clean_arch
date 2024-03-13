@@ -15,7 +15,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   void _loading() {
     emit(state.copyWith(
-      authStatus: AuthStatus.initial,
+      authStatus: AuthStatus.loading,
       successMessage: '',
       errorMessage: '',
     ));

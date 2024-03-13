@@ -29,4 +29,7 @@ class AssetConst {
       '${pngPath}ic_moneyfest_logo_word_light.png';
   static const icMoneyfestLogoWordDark =
       '${pngPath}ic_moneyfest_logo_word_dark.png';
+
+  // * JSON
+  static const storeMockData = '${jsonPath}store_mock_data.json';
 }
