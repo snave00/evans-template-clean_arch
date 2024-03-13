@@ -27,7 +27,7 @@ class AuthCubit extends Cubit<AuthState> {
     _loading();
 
     // TODO: for testing only
-    await Future.delayed(const Duration(seconds: 1));
+    // await Future.delayed(const Duration(seconds: 1));
 
     emit(state.copyWith(
       authStatus: AuthStatus.authenticated,

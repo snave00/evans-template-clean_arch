@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../utils/constants/asset_const.dart';
 import '../../../../utils/constants/string_const.dart';
 import '../../../../utils/constants/widget_const.dart';
 
@@ -44,40 +46,45 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
             height: WidgetSize.s60,
             selectedIndex: navigationShell.currentIndex,
             // surfaceTintColor: theme.colorScheme.background,
-            // indicatorColor: Colors.transparent,
+            indicatorColor: Colors.transparent,
             destinations: [
               // home
-              _buildNavigationDestination(
+              _buildNavigationDestinationSVG(
                 theme: theme,
-                iconData: FontAwesomeIcons.house,
+                iconPath: AssetConst.icExploreUnSelected,
+                selectedIconPath: AssetConst.icExploreSelected,
                 label: StringConst.home,
               ),
 
               // activity
-              _buildNavigationDestination(
+              _buildNavigationDestinationSVG(
                 theme: theme,
-                iconData: FontAwesomeIcons.list,
+                iconPath: AssetConst.icActivityUnSelected,
+                selectedIconPath: AssetConst.icActivitySelected,
                 label: StringConst.activity,
               ),
 
               // cart
-              _buildNavigationDestination(
+              _buildNavigationDestinationSVG(
                 theme: theme,
-                iconData: FontAwesomeIcons.cartShopping,
+                iconPath: AssetConst.icCartUnSelected,
+                selectedIconPath: AssetConst.icCartSelected,
                 label: StringConst.cart,
               ),
 
               // messages
-              _buildNavigationDestination(
+              _buildNavigationDestinationSVG(
                 theme: theme,
-                iconData: FontAwesomeIcons.message,
+                iconPath: AssetConst.icMessageUnSelected,
+                selectedIconPath: AssetConst.icMessageSelected,
                 label: StringConst.messages,
               ),
 
               // account
-              _buildNavigationDestination(
+              _buildNavigationDestinationSVG(
                 theme: theme,
-                iconData: FontAwesomeIcons.user,
+                iconPath: AssetConst.icAccountUnSelected,
+                selectedIconPath: AssetConst.icAccountSelected,
                 label: StringConst.account,
               ),
             ],
@@ -104,31 +111,32 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
     );
   }
 
-  // Widget _buildNavigationDestinationSVG({
-  //   required ThemeData theme,
-  //   required String iconPath,
-  //   required String selectedIconPath,
-  //   required String label,
-  //   bool isNewTransaction = false,
-  // }) {
-  //   return NavigationDestination(
-  //     icon: SvgPicture.asset(
-  //       iconPath,
-  //       height: isNewTransaction ? WidgetSize.s40 : WidgetSize.s24,
-  //       width: isNewTransaction ? WidgetSize.s40 : WidgetSize.s24,
-  //     ),
-  //     selectedIcon: isNewTransaction
-  //         ? null
-  //         : SvgPicture.asset(
-  //             selectedIconPath,
-  //             height: WidgetSize.s24,
-  //             width: WidgetSize.s24,
-  //             colorFilter: ColorFilter.mode(
-  //               theme.colorScheme.primary,
-  //               BlendMode.srcIn,
-  //             ),
-  //           ),
-  //     label: label,
-  //   );
-  // }
+  Widget _buildNavigationDestinationSVG({
+    required ThemeData theme,
+    required String iconPath,
+    required String selectedIconPath,
+    required String label,
+  }) {
+    return NavigationDestination(
+      icon: SvgPicture.asset(
+        iconPath,
+        height: WidgetSize.s28,
+        width: WidgetSize.s28,
+        colorFilter: const ColorFilter.mode(
+          Colors.grey,
+          BlendMode.srcIn,
+        ),
+      ),
+      selectedIcon: SvgPicture.asset(
+        selectedIconPath,
+        height: WidgetSize.s28,
+        width: WidgetSize.s28,
+        colorFilter: ColorFilter.mode(
+          theme.colorScheme.primary,
+          BlendMode.srcIn,
+        ),
+      ),
+      label: label,
+    );
+  }
 }
