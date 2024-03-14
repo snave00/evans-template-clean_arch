@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../utils/constants/string_const.dart';
 import '../../../../utils/constants/widget_const.dart';
+import '../spacing/spacing.dart';
 
 class CustomSnackBarContent extends StatelessWidget {
   final bool isSuccess;
@@ -44,7 +45,7 @@ class CustomSnackBarContent extends StatelessWidget {
                 ? theme.colorScheme.onPrimary
                 : theme.colorScheme.onError,
           ),
-          const SizedBox(width: WidgetMargin.marginM),
+          const Spacing.horizontal(size: SpacingSize.m),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

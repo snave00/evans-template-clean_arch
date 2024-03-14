@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../utils/constants/asset_const.dart';
 import '../../../../utils/constants/string_const.dart';
 import '../../../../utils/constants/widget_const.dart';
+import '../spacing/spacing.dart';
 import '../text/pro_label.dart';
 
 enum AppLogoType {
@@ -175,7 +176,8 @@ class AppLogo extends StatelessWidget {
             ),
           ),
         ),
-        if (showProLabel ?? false) const SizedBox(width: WidgetMargin.marginS),
+        if (showProLabel ?? false)
+          const Spacing.horizontal(size: SpacingSize.s),
         if (showProLabel ?? false) const ProLabel(),
       ],
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../core/presentation/widgets/image/custom_cached_network_image.dart';
+import '../../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../../../../../utils/constants/widget_const.dart';
 import '../../../domain/entities/store_entity.dart';
 
@@ -47,18 +48,18 @@ class StoreItem extends StatelessWidget {
           children: [
             // image
             _buildImage(),
-            const SizedBox(height: WidgetMargin.marginS),
+            const Spacing.vertical(size: SpacingSize.s),
 
             // title
             _buildTitle(theme: theme),
 
             // desc
             _buildDesc(theme: theme),
-            const SizedBox(height: WidgetMargin.marginXS),
+            const Spacing.vertical(size: SpacingSize.xs),
 
             // distance & rating
             _buildRatingAndDistance(theme: theme),
-            const SizedBox(height: WidgetMargin.marginXS),
+            const Spacing.vertical(size: SpacingSize.xs),
           ],
         ),
       ),
@@ -83,7 +84,7 @@ class StoreItem extends StatelessWidget {
   Widget _buildTitle({required ThemeData theme}) {
     return Row(
       children: [
-        const SizedBox(width: WidgetPadding.paddingXS),
+        const Spacing.horizontal(size: SpacingSize.xs),
         Expanded(
           child: Text(
             storeEntity.storeName,
@@ -102,7 +103,7 @@ class StoreItem extends StatelessWidget {
   Widget _buildDesc({required ThemeData theme}) {
     return Row(
       children: [
-        const SizedBox(width: WidgetPadding.paddingXS),
+        const Spacing.horizontal(size: SpacingSize.xs),
         Expanded(
           child: Text(
             storeEntity.storeDesc,
@@ -122,7 +123,7 @@ class StoreItem extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const SizedBox(width: WidgetPadding.paddingXS),
+        const Spacing.horizontal(size: SpacingSize.xs),
 
         // icon
         const FaIcon(
@@ -130,7 +131,7 @@ class StoreItem extends StatelessWidget {
           size: WidgetSize.s10,
           color: Colors.orange,
         ),
-        const SizedBox(width: WidgetPadding.paddingXS),
+        const Spacing.horizontal(size: SpacingSize.xs),
 
         // rating & distance
         Expanded(

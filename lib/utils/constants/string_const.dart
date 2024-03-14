@@ -47,6 +47,8 @@ class StringConst {
 
   static const String zeroCurrency = '0.00';
   static const String zero = '0';
+  static const String dummy1kPesos = '₱ 1,000.00';
+  static const String dummy100Pesos = '₱ 100.00';
 
   // * Placeholder
   static const String emptyStateIcon = '🍃';
@@ -70,4 +72,6 @@ class StringConst {
 
   // * Home
   static const String restaurantsYouMayLike = 'Restaurants you may like';
+  static const String balance = 'Balance';
+  static const String points = 'Points';
 }

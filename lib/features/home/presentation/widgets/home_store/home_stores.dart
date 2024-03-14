@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../utils/constants/widget_const.dart';
+import '../../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../../../cubit/home_cubit.dart';
 import 'home_stores_list.dart';
 import 'home_stores_title.dart';
@@ -22,11 +22,10 @@ class HomeStores extends StatelessWidget {
             children: [
               // title
               HomeStoresTitle(stores: stores),
-              const SizedBox(height: WidgetMargin.marginS),
+              const Spacing.vertical(size: SpacingSize.s),
 
               // list
               HomeStoresList(stores: stores, homeStatus: homeStatus),
-              const SizedBox(height: WidgetMargin.marginXL),
             ],
           );
         },

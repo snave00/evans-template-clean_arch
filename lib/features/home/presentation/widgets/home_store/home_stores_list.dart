@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/presentation/widgets/icon/emoji_icon_widget.dart';
 import '../../../../../core/presentation/widgets/placeholder/empty_state_text.dart';
 import '../../../../../core/presentation/widgets/progress/custom_circular_progress.dart';
+import '../../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../../../../../utils/constants/string_const.dart';
 import '../../../../../utils/constants/widget_const.dart';
 import '../../../../store/domain/entities/store_entity.dart';
@@ -43,7 +44,7 @@ class HomeStoresList extends StatelessWidget {
       height: WidgetSize.s220,
       child: ListView.separated(
         separatorBuilder: (context, index) {
-          return const SizedBox(width: WidgetMargin.marginM);
+          return const Spacing.horizontal(size: SpacingSize.m);
         },
         scrollDirection: Axis.horizontal,
         padding:

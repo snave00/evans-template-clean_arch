@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../utils/constants/widget_const.dart';
 import '../icon/chevron_down_icon.dart';
+import '../spacing/spacing.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? title;
@@ -79,7 +79,7 @@ class CustomTextFormField extends StatelessWidget {
             title ?? '',
             style: theme.textTheme.titleSmall,
           ),
-        if (title != null) const SizedBox(height: WidgetMargin.marginS),
+        if (title != null) const Spacing.vertical(size: SpacingSize.s),
         TextFormField(
           initialValue: initialValue,
           controller: controller,
