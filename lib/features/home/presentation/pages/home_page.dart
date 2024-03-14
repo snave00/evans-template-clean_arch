@@ -6,6 +6,7 @@ import '../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../widgets/home_app_bar/home_app_bar.dart';
 import '../widgets/home_balance/home_balance.dart';
 import '../widgets/home_search/home_search.dart';
+import '../widgets/home_services/home_services.dart';
 import '../widgets/home_store/home_stores.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,6 +24,10 @@ class HomePage extends StatelessWidget {
               slivers: [
                 // search bar
                 HomeSearch(),
+                Spacing.vertical(size: SpacingSize.l, isSliver: true),
+
+                // services
+                HomeServices(),
                 Spacing.vertical(size: SpacingSize.l, isSliver: true),
 
                 // balance & points

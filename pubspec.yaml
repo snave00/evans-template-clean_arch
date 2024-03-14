@@ -108,7 +108,7 @@ flutter_launcher_icons:
   remove_alpha_ios: true
   
   image_path: "assets/images/png/ic_launcher.png"
-  adaptive_icon_background: "#11BB99"
+  adaptive_icon_background: "#40A2E3"
   adaptive_icon_foreground: "assets/images/png/ic_adaptive_foreground.png" # for android
 
   min_sdk_android: 21 # android min sdk min:16
@@ -128,7 +128,7 @@ flutter_native_splash:
   # of your splash screen to a solid color.  Use background_image to set the background of your
   # splash screen to a png image.  This is useful for gradients. The image will be stretch to the
   # size of the app. Only one parameter can be used, color and background_image cannot both be set.
-  color: "#11BB99" #original
+  color: "#40A2E3" #original
   # background_image: "assets/images/png/splash_bg.png" #christmas
 
   # Optional parameters are listed below.  To enable a parameter, uncomment the line by removing

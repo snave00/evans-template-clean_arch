@@ -45,6 +45,7 @@ class StringConst {
   static const String youreAlreadyInDevMode = 'You\'re already in dev mode';
   static const String and = 'and';
   static const String pro = 'Pro';
+  static const String goodMorning = 'Good morning!';
 
   static const String zeroCurrency = '0.00';
   static const String zero = '0';
@@ -75,4 +76,9 @@ class StringConst {
   static const String restaurantsYouMayLike = 'Restaurants you may like';
   static const String balance = 'Balance';
   static const String points = 'Points';
+  static const String food = 'Food';
+  static const String mart = 'Mart';
+  static const String courier = 'Courier';
+  static const String car = 'Car';
+  static const String all = 'All';
 }

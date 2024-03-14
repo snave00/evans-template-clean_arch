@@ -53,7 +53,7 @@ class AppLogo extends StatelessWidget {
     }
 
     if (appLogoType == AppLogoType.nameLogo) {
-      return _buildNameLogo(isDarkMode: isDarkMode);
+      return _buildNameLogo(theme: theme, isDarkMode: isDarkMode);
     }
 
     return Container();
@@ -161,21 +161,32 @@ class AppLogo extends StatelessWidget {
     );
   }
 
-  Widget _buildNameLogo({required bool isDarkMode}) {
-    const defaultSize = WidgetSize.s140;
+  Widget _buildNameLogo({required ThemeData theme, required bool isDarkMode}) {
+    // const defaultSize = WidgetSize.s140;
     return Row(
       children: [
+        // using text
         SizedBox(
-          width: size ?? defaultSize,
-          child: Image(
-            // default image
-            image: AssetImage(
-              isDarkMode
-                  ? AssetConst.icMoneyfestLogoWordDark
-                  : AssetConst.icMoneyfestLogoWordLight,
+          child: Text(
+            StringConst.goodMorning,
+            style: theme.textTheme.titleLarge?.copyWith(
+              color: theme.colorScheme.primary,
             ),
           ),
         ),
+
+        // using image
+        // SizedBox(
+        //   width: size ?? defaultSize,
+        //   child: Image(
+        //     // default image
+        //     image: AssetImage(
+        //       isDarkMode
+        //           ? AssetConst.icMoneyfestLogoWordDark
+        //           : AssetConst.icMoneyfestLogoWordLight,
+        //     ),
+        //   ),
+        // ),
         if (showProLabel ?? false)
           const Spacing.horizontal(size: SpacingSize.s),
         if (showProLabel ?? false) const ProLabel(),
