@@ -24,11 +24,11 @@ class HomeBalanceContainer extends StatelessWidget {
         decoration: BoxDecoration(
           color: theme.colorScheme.surfaceVariant,
           borderRadius: BorderRadius.circular(
-            WidgetBorderRadius.borderS,
+            WidgetBorderRadius.border12,
           ),
         ),
         padding: const EdgeInsets.all(
-          WidgetPadding.paddingS,
+          WidgetPadding.padding10,
         ),
         child: Row(
           children: [

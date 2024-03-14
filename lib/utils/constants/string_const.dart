@@ -23,10 +23,11 @@ class StringConst {
   static const String no = 'No';
   static const String edit = 'Edit';
   static const String select = 'Select';
-  static const String search = 'Search';
   static const String delete = 'Delete';
   static const String deleted = 'Deleted';
   static const String viewAll = 'View all';
+  static const String search = 'Search';
+  static const String searchForDishes = 'Search for dishes & restaurants...';
 
   // * Common Text
   static const String loading = 'Loading...';

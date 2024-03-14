@@ -14,7 +14,7 @@ class HomeBalance extends StatelessWidget {
     final theme = Theme.of(context);
 
     return SliverToBoxAdapter(
-      child: Container(
+      child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: PagePadding.pagePadding,
         ),

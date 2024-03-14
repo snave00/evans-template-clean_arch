@@ -19,7 +19,7 @@ class HomeStoresTitle extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.only(
-        left: WidgetPadding.paddingL,
+        left: PagePadding.pagePadding,
         right: WidgetPadding.paddingM,
       ),
       child: Row(

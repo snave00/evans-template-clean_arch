@@ -165,12 +165,13 @@ class AppTheme {
         borderSide: BorderSide.none,
       ),
       focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(WidgetBorderRadius.border12),
-          borderSide: BorderSide(
-            color: baseTheme.colorScheme.primary,
-          )),
+        borderRadius: BorderRadius.circular(WidgetBorderRadius.border12),
+        borderSide: BorderSide(
+          color: baseTheme.colorScheme.primary,
+        ),
+      ),
       contentPadding: const EdgeInsets.all(
-        WidgetPadding.paddingM,
+        WidgetPadding.paddingS,
       ),
     );
   }
