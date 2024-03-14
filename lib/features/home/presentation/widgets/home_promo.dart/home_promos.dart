@@ -3,29 +3,32 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../../../cubit/home_cubit.dart';
-import 'home_stores_list.dart';
-import 'home_stores_title.dart';
+import 'home_promos_list.dart';
+import 'home_promos_title.dart';
 
-class HomeStores extends StatelessWidget {
-  const HomeStores({super.key});
+class HomePromos extends StatelessWidget {
+  const HomePromos({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (ctx, state) {
-          final stores = state.stores;
-          final homeStoreStatus = state.homeStoreStatus;
+          final promos = state.promos;
+          final homePromosStatus = state.homePromosStatus;
 
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // title
-              HomeStoresTitle(stores: stores),
+              HomePromosTitle(promos: promos),
               const Spacing.vertical(size: SpacingSize.s),
 
               // list
-              HomeStoresList(stores: stores, homeStoreStatus: homeStoreStatus),
+              HomePromosList(
+                promos: promos,
+                homePromosStatus: homePromosStatus,
+              ),
             ],
           );
         },

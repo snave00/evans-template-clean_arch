@@ -37,4 +37,5 @@ class AssetConst {
 
   // * JSON
   static const storeMockData = '${jsonPath}store_mock_data.json';
+  static const promoMockData = '${jsonPath}promo_mock_data.json';
 }

@@ -16,29 +16,49 @@ class HomePageWrapper extends StatelessWidget {
 
     return BlocListener<HomeCubit, HomeState>(
       listener: (ctx, state) {
-        _handleHomeState(context: ctx, theme: theme, state: state);
+        _handleHomeStoreStatus(context: ctx, theme: theme, state: state);
+        _handleHomePromosStatus(context: ctx, theme: theme, state: state);
       },
       child: const HomePage(),
     );
   }
 
-  void _handleHomeState({
+  void _handleHomeStoreStatus({
     required BuildContext context,
     required ThemeData theme,
     required HomeState state,
   }) async {
-    switch (state.homeStatus) {
-      case HomeStatus.initial:
+    switch (state.homeStoreStatus) {
+      case HomeStoreStatus.initial:
         return;
-      case HomeStatus.loading:
+      case HomeStoreStatus.getStoresLoading:
         return;
-      case HomeStatus.getStoresLoading:
+      case HomeStoreStatus.getStoresSuccess:
         return;
-      case HomeStatus.getStoresSuccess:
+      case HomeStoreStatus.failure:
+        showSnackBar(
+          context: context,
+          theme: theme,
+          isSuccess: false,
+          message: state.errorMessage ?? '',
+        );
         return;
-      case HomeStatus.success:
+    }
+  }
+
+  void _handleHomePromosStatus({
+    required BuildContext context,
+    required ThemeData theme,
+    required HomeState state,
+  }) async {
+    switch (state.homePromosStatus) {
+      case HomePromosStatus.initial:
         return;
-      case HomeStatus.failure:
+      case HomePromosStatus.getPromosLoading:
+        return;
+      case HomePromosStatus.getPromosSuccess:
+        return;
+      case HomePromosStatus.failure:
         showSnackBar(
           context: context,
           theme: theme,

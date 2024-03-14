@@ -24,7 +24,7 @@ class StoreRepoImpl implements StoreRepo {
 
       final storesToEntity = stores.map((store) => store.toEntity()).toList();
       final storesToJson =
-          storesToEntity.map((emoji) => emoji.toJson()).toList();
+          storesToEntity.map((store) => store.toJson()).toList();
 
       Log.logRepo(
         repoName: runtimeTypeName,

@@ -6,42 +6,42 @@ import '../../../../../core/presentation/widgets/progress/custom_circular_progre
 import '../../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../../../../../utils/constants/string_const.dart';
 import '../../../../../utils/constants/widget_const.dart';
-import '../../../../store/domain/entities/store_entity.dart';
-import '../../../../store/presentation/widgets/item/store_item.dart';
+import '../../../../promos/domain/entities/promo_entity.dart';
+import '../../../../promos/presentation/widgets/item/promo_item.dart';
 import '../../../cubit/home_cubit.dart';
 
-class HomeStoresList extends StatelessWidget {
-  final List<StoreEntity> stores;
-  final HomeStoreStatus homeStoreStatus;
+class HomePromosList extends StatelessWidget {
+  final List<PromoEntity> promos;
+  final HomePromosStatus homePromosStatus;
 
-  const HomeStoresList({
+  const HomePromosList({
     super.key,
-    required this.stores,
-    required this.homeStoreStatus,
+    required this.promos,
+    required this.homePromosStatus,
   });
 
   @override
   Widget build(BuildContext context) {
-    if (homeStoreStatus == HomeStoreStatus.getStoresLoading) {
+    if (homePromosStatus == HomePromosStatus.getPromosLoading) {
       return _buildLoadingState();
     }
 
-    if (stores.isEmpty) {
+    if (promos.isEmpty) {
       return _buildEmptyState();
     }
 
     return _buildLoadedState(
       context: context,
-      stores: stores,
+      promos: promos,
     );
   }
 
   Widget _buildLoadedState({
     required BuildContext context,
-    required List<StoreEntity> stores,
+    required List<PromoEntity> promos,
   }) {
     return SizedBox(
-      height: WidgetSize.s220,
+      height: WidgetSize.s140,
       child: ListView.separated(
         separatorBuilder: (context, index) {
           return const Spacing.horizontal(size: SpacingSize.m);
@@ -49,13 +49,12 @@ class HomeStoresList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         padding:
             const EdgeInsets.symmetric(horizontal: PagePadding.pagePadding - 3),
-        itemCount: stores.length,
+        itemCount: promos.length,
         itemBuilder: (ctx, index) {
-          final storeEntity = stores[index];
+          final promoEntity = promos[index];
 
-          return StoreItem(
-            storeEntity: storeEntity,
-            storeItemLayout: StoreItemLayout.horizontal,
+          return PromoItem(
+            promoEntity: promoEntity,
             onTap: () async {},
           );
         },
@@ -68,10 +67,10 @@ class HomeStoresList extends StatelessWidget {
       children: [
         EmptyStateText(
           emptyStateIcon: EmojiIconWidget(
-            emoji: StringConst.emptyStateIcon,
+            emoji: StringConst.emptyStateIcon2,
             emojiSize: EmojiSize.medium,
           ),
-          emptyStateText: StringConst.noRestaurantsFound,
+          emptyStateText: StringConst.noPromosFound,
         ),
       ],
     );
