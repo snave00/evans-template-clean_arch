@@ -13,6 +13,7 @@ class HomeState with _$HomeState {
 enum HomeStatus {
   initial,
   loading,
+  getStoresLoading,
   getStoresSuccess,
   success,
   failure,

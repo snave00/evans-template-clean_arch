@@ -26,6 +26,7 @@ class StringConst {
   static const String search = 'Search';
   static const String delete = 'Delete';
   static const String deleted = 'Deleted';
+  static const String viewAll = 'View all';
 
   // * Common Text
   static const String loading = 'Loading...';
@@ -52,6 +53,7 @@ class StringConst {
   static const String emptyStateIcon2 = '🙈';
   static const String emptyStateIcon3 = '💰';
   static const String emptyStateIcon4 = '📖';
+  static const String noRestaurantsFound = 'No restaurants found';
 
   // * Terms & Privacy
   static const String termsPrivacyMessage =
@@ -65,4 +67,7 @@ class StringConst {
   static const String cart = 'Cart';
   static const String messages = 'Messages';
   static const String account = 'Account';
+
+  // * Home
+  static const String restaurantsYouMayLike = 'Restaurants you may like';
 }

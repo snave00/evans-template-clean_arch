@@ -33,7 +33,7 @@ class InitialPageWrapper extends StatelessWidget {
       ],
       child: const Scaffold(
         body: Center(
-          child: CustomCircularProgress(),
+          child: CustomCircularProgress(progressSize: ProgressSize.large),
           // child: AppLogo(
           //   appLogoType: AppLogoType.roundedSquare,
           //   size: WidgetSize.s100,

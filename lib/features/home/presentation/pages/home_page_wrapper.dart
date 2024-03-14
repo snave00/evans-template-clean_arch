@@ -1,9 +1,9 @@
-import 'package:evans_template/core/presentation/widgets/progress/custom_circular_progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../utils/helpers/shared/helper_func.dart';
 import '../../cubit/home_cubit.dart';
+import 'home_page.dart';
 
 class HomePageWrapper extends StatelessWidget {
   const HomePageWrapper({
@@ -18,18 +18,7 @@ class HomePageWrapper extends StatelessWidget {
       listener: (ctx, state) {
         _handleHomeState(context: ctx, theme: theme, state: state);
       },
-      child: Scaffold(
-        body: Center(
-          child: BlocBuilder<HomeCubit, HomeState>(
-            builder: (ctx, state) {
-              if (state.homeStatus == HomeStatus.loading) {
-                return CustomCircularProgress();
-              }
-              return Text('Homee');
-            },
-          ),
-        ),
-      ),
+      child: const HomePage(),
     );
   }
 
@@ -42,6 +31,8 @@ class HomePageWrapper extends StatelessWidget {
       case HomeStatus.initial:
         return;
       case HomeStatus.loading:
+        return;
+      case HomeStatus.getStoresLoading:
         return;
       case HomeStatus.getStoresSuccess:
         return;

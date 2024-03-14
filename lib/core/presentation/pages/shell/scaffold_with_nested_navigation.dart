@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../utils/constants/asset_const.dart';
@@ -37,77 +36,82 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
       body: SafeArea(
         child: navigationShell,
       ),
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // const CustomDivider(),
-          NavigationBar(
-            labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-            height: WidgetSize.s60,
-            selectedIndex: navigationShell.currentIndex,
-            // surfaceTintColor: theme.colorScheme.background,
-            indicatorColor: Colors.transparent,
-            destinations: [
-              // home
-              _buildNavigationDestinationSVG(
-                theme: theme,
-                iconPath: AssetConst.icExploreUnSelected,
-                selectedIconPath: AssetConst.icExploreSelected,
-                label: StringConst.home,
-              ),
-
-              // activity
-              _buildNavigationDestinationSVG(
-                theme: theme,
-                iconPath: AssetConst.icActivityUnSelected,
-                selectedIconPath: AssetConst.icActivitySelected,
-                label: StringConst.activity,
-              ),
-
-              // cart
-              _buildNavigationDestinationSVG(
-                theme: theme,
-                iconPath: AssetConst.icCartUnSelected,
-                selectedIconPath: AssetConst.icCartSelected,
-                label: StringConst.cart,
-              ),
-
-              // messages
-              _buildNavigationDestinationSVG(
-                theme: theme,
-                iconPath: AssetConst.icMessageUnSelected,
-                selectedIconPath: AssetConst.icMessageSelected,
-                label: StringConst.messages,
-              ),
-
-              // account
-              _buildNavigationDestinationSVG(
-                theme: theme,
-                iconPath: AssetConst.icAccountUnSelected,
-                selectedIconPath: AssetConst.icAccountSelected,
-                label: StringConst.account,
-              ),
-            ],
-            onDestinationSelected: (selectedIndex) {
-              _goBranch(
-                context: context,
-                selectedIndex: selectedIndex,
-              );
-            },
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+          labelTextStyle: MaterialStateProperty.resolveWith<TextStyle>(
+            (Set<MaterialState> states) =>
+                states.contains(MaterialState.selected)
+                    ? theme.textTheme.bodySmall?.copyWith(
+                          color: theme.colorScheme.primary,
+                        ) ??
+                        const TextStyle()
+                    : theme.textTheme.bodySmall?.copyWith(
+                          color: Colors.grey,
+                        ) ??
+                        const TextStyle(),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // const CustomDivider(),
+            NavigationBar(
+              selectedIndex: navigationShell.currentIndex,
+              indicatorColor: Colors.transparent,
+              // labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+              height: WidgetSize.s64,
+              // surfaceTintColor: theme.colorScheme.background,
+              destinations: [
+                // home
+                _buildNavigationDestinationSVG(
+                  theme: theme,
+                  iconPath: AssetConst.icExploreUnSelected,
+                  selectedIconPath: AssetConst.icExploreSelected,
+                  label: StringConst.home,
+                ),
 
-  Widget _buildNavigationDestination({
-    required ThemeData theme,
-    required IconData iconData,
-    required String label,
-  }) {
-    return NavigationDestination(
-      icon: FaIcon(iconData),
-      label: label,
+                // activity
+                _buildNavigationDestinationSVG(
+                  theme: theme,
+                  iconPath: AssetConst.icActivityUnSelected,
+                  selectedIconPath: AssetConst.icActivitySelected,
+                  label: StringConst.activity,
+                ),
+
+                // cart
+                _buildNavigationDestinationSVG(
+                  theme: theme,
+                  iconPath: AssetConst.icCartUnSelected,
+                  selectedIconPath: AssetConst.icCartSelected,
+                  label: StringConst.cart,
+                ),
+
+                // messages
+                _buildNavigationDestinationSVG(
+                  theme: theme,
+                  iconPath: AssetConst.icMessageUnSelected,
+                  selectedIconPath: AssetConst.icMessageSelected,
+                  label: StringConst.messages,
+                ),
+
+                // account
+                _buildNavigationDestinationSVG(
+                  theme: theme,
+                  iconPath: AssetConst.icAccountUnSelected,
+                  selectedIconPath: AssetConst.icAccountSelected,
+                  label: StringConst.account,
+                ),
+              ],
+              onDestinationSelected: (selectedIndex) {
+                _goBranch(
+                  context: context,
+                  selectedIndex: selectedIndex,
+                );
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -120,8 +124,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
     return NavigationDestination(
       icon: SvgPicture.asset(
         iconPath,
-        height: WidgetSize.s28,
-        width: WidgetSize.s28,
+        height: WidgetSize.s24,
+        width: WidgetSize.s24,
         colorFilter: const ColorFilter.mode(
           Colors.grey,
           BlendMode.srcIn,
@@ -129,8 +133,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
       ),
       selectedIcon: SvgPicture.asset(
         selectedIconPath,
-        height: WidgetSize.s28,
-        width: WidgetSize.s28,
+        height: WidgetSize.s24,
+        width: WidgetSize.s24,
         colorFilter: ColorFilter.mode(
           theme.colorScheme.primary,
           BlendMode.srcIn,
@@ -139,4 +143,15 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
       label: label,
     );
   }
+
+  // Widget _buildNavigationDestination({
+  //   required ThemeData theme,
+  //   required IconData iconData,
+  //   required String label,
+  // }) {
+  //   return NavigationDestination(
+  //     icon: FaIcon(iconData),
+  //     label: label,
+  //   );
+  // }
 }

@@ -22,17 +22,17 @@ class HomeCubit extends Cubit<HomeState> {
     await _getStores();
   }
 
-  void _loading() {
+  void _loadingHome() {
     emit(state.copyWith(
-      homeStatus: HomeStatus.loading,
+      homeStatus: HomeStatus.getStoresLoading,
       successMessage: '',
       errorMessage: '',
     ));
   }
 
   Future<void> _getStores() async {
-    _loading();
-    await Future.delayed(Duration(seconds: 3));
+    _loadingHome();
+    await Future.delayed(const Duration(seconds: 3));
     final result = await getStoresUseCase.call(NoParams());
     result.fold(
       (failure) => emit(
