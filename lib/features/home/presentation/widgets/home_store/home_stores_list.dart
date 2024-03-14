@@ -40,7 +40,7 @@ class HomeStoresList extends StatelessWidget {
     required List<StoreEntity> stores,
   }) {
     return SizedBox(
-      height: WidgetSize.s200,
+      height: WidgetSize.s220,
       child: ListView.separated(
         separatorBuilder: (context, index) {
           return const SizedBox(width: WidgetMargin.marginM);

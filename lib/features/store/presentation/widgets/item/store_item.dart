@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../core/presentation/widgets/image/custom_cached_network_image.dart';
 import '../../../../../utils/constants/widget_const.dart';
@@ -39,31 +40,111 @@ class StoreItem extends StatelessWidget {
   Widget _buildHorizontalLayout({required ThemeData theme}) {
     return GestureDetector(
       onTap: onTap,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // image
-          const CustomCachedNetworkImage(
-            imageUrl: 'http://via.placeholder.com/250x150',
-          ),
+      child: SizedBox(
+        width: WidgetSize.s140,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // image
+            _buildImage(),
+            const SizedBox(height: WidgetMargin.marginS),
 
-          const SizedBox(height: WidgetMargin.marginS),
+            // title
+            _buildTitle(theme: theme),
 
-          // title
-          Text(
+            // desc
+            _buildDesc(theme: theme),
+            const SizedBox(height: WidgetMargin.marginXS),
+
+            // distance & rating
+            _buildRatingAndDistance(theme: theme),
+            const SizedBox(height: WidgetMargin.marginXS),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildImage() {
+    return SizedBox(
+      width: WidgetSize.s140,
+      height: WidgetSize.s140,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(
+          WidgetBorderRadius.border12,
+        ),
+        child: const CustomCachedNetworkImage(
+          imageUrl: 'http://via.placeholder.com/140x140',
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTitle({required ThemeData theme}) {
+    return Row(
+      children: [
+        const SizedBox(width: WidgetPadding.paddingXS),
+        Expanded(
+          child: Text(
             storeEntity.storeName,
-            maxLines: 2,
+            maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: theme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.start,
           ),
-          const SizedBox(height: WidgetMargin.marginXS),
+        ),
+      ],
+    );
+  }
 
-          // distance & rating
-        ],
-      ),
+  Widget _buildDesc({required ThemeData theme}) {
+    return Row(
+      children: [
+        const SizedBox(width: WidgetPadding.paddingXS),
+        Expanded(
+          child: Text(
+            storeEntity.storeDesc,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: Colors.grey,
+            ),
+            textAlign: TextAlign.start,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildRatingAndDistance({required ThemeData theme}) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const SizedBox(width: WidgetPadding.paddingXS),
+
+        // icon
+        const FaIcon(
+          FontAwesomeIcons.solidStar,
+          size: WidgetSize.s10,
+          color: Colors.orange,
+        ),
+        const SizedBox(width: WidgetPadding.paddingXS),
+
+        // rating & distance
+        Expanded(
+          child: Text(
+            '${storeEntity.rating} | ${storeEntity.distance}',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: Colors.grey,
+            ),
+            textAlign: TextAlign.start,
+          ),
+        ),
+      ],
     );
   }
 }
