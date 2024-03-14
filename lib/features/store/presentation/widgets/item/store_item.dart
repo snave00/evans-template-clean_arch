@@ -59,7 +59,7 @@ class StoreItem extends StatelessWidget {
 
             // distance & rating
             _buildRatingAndDistance(theme: theme),
-            const Spacing.vertical(size: SpacingSize.xs),
+            // const Spacing.vertical(size: SpacingSize.xs),
           ],
         ),
       ),
@@ -74,8 +74,9 @@ class StoreItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           WidgetBorderRadius.border12,
         ),
-        child: const CustomCachedNetworkImage(
-          imageUrl: 'http://via.placeholder.com/140x140',
+        child: CustomCachedNetworkImage(
+          imageUrl: storeEntity.storeThumbnail,
+          // imageUrl: 'http://via.placeholder.com/140x140',
         ),
       ),
     );
