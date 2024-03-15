@@ -81,7 +81,7 @@ class WidgetSize {
 
 class PagePadding {
   PagePadding._();
-  static const double pagePadding = 24.0;
+  static const double pagePadding = 16.0;
 }
 
 class WidgetAnimation {

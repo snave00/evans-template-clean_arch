@@ -6,6 +6,7 @@ import '../../../../../core/presentation/widgets/progress/custom_circular_progre
 import '../../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../../../../../utils/constants/string_const.dart';
 import '../../../../../utils/constants/widget_const.dart';
+import '../../../../../utils/router/router_func.dart';
 import '../../../../store/domain/entities/store_entity.dart';
 import '../../../../store/presentation/widgets/item/store_item.dart';
 import '../../../cubit/home_cubit.dart';
@@ -52,11 +53,17 @@ class HomeStoresList extends StatelessWidget {
         itemCount: stores.length,
         itemBuilder: (ctx, index) {
           final storeEntity = stores[index];
+          final storeId = storeEntity.storeId;
 
           return StoreItem(
             storeEntity: storeEntity,
             storeItemLayout: StoreItemLayout.horizontal,
-            onTap: () async {},
+            onTap: () async {
+              await RouterFunc.goToStoreDetailPage(
+                context: context,
+                storeId: storeId,
+              );
+            },
           );
         },
       ),

@@ -11,7 +11,9 @@ import '../../features/promos/domain/usecases/get_promos_usecase.dart';
 import '../../features/store/data/data_source/store_mock_data_source.dart';
 import '../../features/store/data/repositories/store_repo_impl.dart';
 import '../../features/store/domain/repositories/store_repo.dart';
+import '../../features/store/domain/usecases/get_store_usecase.dart';
 import '../../features/store/domain/usecases/get_stores_usecase.dart';
+import '../../features/store/presentation/cubit/cubit/store_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -25,10 +27,12 @@ Future<void> init() async {
       getPromosUseCase: sl(),
     ),
   );
+  sl.registerFactory(() => StoreCubit(getStoreUseCase: sl()));
 
   // * USECASES
   // store
   sl.registerFactory(() => GetStoresUseCase(storeRepo: sl()));
+  sl.registerFactory(() => GetStoreUseCase(storeRepo: sl()));
 
   // promo
   sl.registerFactory(() => GetPromosUseCase(promoRepo: sl()));

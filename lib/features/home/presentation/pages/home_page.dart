@@ -20,7 +20,9 @@ class HomePage extends StatelessWidget {
         appBar: const HomeAppBar(),
         body: SafeArea(
           child: CustomPullRefresh(
-            onRefresh: () async {},
+            onRefresh: () async {
+              return await Future.delayed(const Duration(seconds: 1));
+            },
             child: const CustomScrollView(
               slivers: [
                 // search bar

@@ -32,7 +32,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> _getStores() async {
     _loadingStore();
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     final result = await getStoresUseCase.call(NoParams());
     result.fold(
       (failure) => emit(
@@ -55,7 +55,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> _getPromos() async {
     _loadingPromo();
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 2));
     final result = await getPromosUseCase.call(NoParams());
     result.fold(
       (failure) => emit(

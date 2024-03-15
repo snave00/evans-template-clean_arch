@@ -8,6 +8,7 @@ import '../models/remote_models/store_model.dart';
 
 abstract class StoreMockDataSource {
   Future<List<StoreModel>> getStores();
+  Future<StoreModel> getStore({required String storeId});
 }
 
 class StoreMockDataSourceImpl implements StoreMockDataSource {
@@ -23,6 +24,23 @@ class StoreMockDataSourceImpl implements StoreMockDataSource {
     );
 
     return stores;
+  }
+
+  @override
+  Future<StoreModel> getStore({required String storeId}) async {
+    final String response = await rootBundle.loadString(
+      AssetConst.storeMockData,
+    );
+
+    // get stores
+    final stores = await Isolate.run(
+      () => getStoresMockData(response),
+    );
+
+    // filter by storeId. this mocks the query for your backend
+    final store = stores.firstWhere((element) => element.storeId == storeId);
+
+    return store;
   }
 }
 

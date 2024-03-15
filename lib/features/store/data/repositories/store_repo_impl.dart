@@ -39,4 +39,28 @@ class StoreRepoImpl implements StoreRepo {
           '${ErrorConst.generalErrorMessage}. getStores\n${e.toString()}'));
     }
   }
+
+  @override
+  Future<Either<Failure, StoreEntity>> getStore({
+    required String storeId,
+  }) async {
+    try {
+      final store = await storeMockDataSource.getStore(storeId: storeId);
+
+      final storeToEntity = store.toEntity();
+      final storeToJson = storeToEntity.toJson();
+
+      Log.logRepo(
+        repoName: runtimeTypeName,
+        functionName: 'getStore success: ',
+        log: storeToJson,
+      );
+      return right(storeToEntity);
+    } on CacheException catch (e) {
+      return left(CacheFailure(e.toString()));
+    } catch (e) {
+      return left(GeneralFailure(
+          '${ErrorConst.generalErrorMessage}. getStore\n${e.toString()}'));
+    }
+  }
 }
