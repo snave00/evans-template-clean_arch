@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../../../core/presentation/widgets/button/bouncing_button.dart';
 import '../../../../../core/presentation/widgets/image/custom_cached_network_image.dart';
 import '../../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../../../../../utils/constants/widget_const.dart';
@@ -39,7 +40,7 @@ class StoreItem extends StatelessWidget {
   }
 
   Widget _buildHorizontalLayout({required ThemeData theme}) {
-    return GestureDetector(
+    return BouncingButton(
       onTap: onTap,
       child: SizedBox(
         width: WidgetSize.s140,

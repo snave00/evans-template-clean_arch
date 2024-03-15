@@ -4,6 +4,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/presentation/cubit/user_cubit.dart';
 import '../../features/auth/presentation/cubit/auth_cubit.dart';
 import '../../features/home/cubit/home_cubit.dart';
+import '../../features/product/data/data_source/product_mock_data_source.dart';
+import '../../features/product/data/repositories/product_repo_impl.dart';
+import '../../features/product/domain/repositories/product_repo.dart';
+import '../../features/product/domain/usecases/get_product_usecase.dart';
+import '../../features/product/domain/usecases/get_products_usecase.dart';
 import '../../features/promos/data/data_source/promo_mock_data_source.dart';
 import '../../features/promos/data/repositories/promo_repo_impl.dart';
 import '../../features/promos/domain/repositories/promo_repo.dart';
@@ -27,12 +32,19 @@ Future<void> init() async {
       getPromosUseCase: sl(),
     ),
   );
-  sl.registerFactory(() => StoreCubit(getStoreUseCase: sl()));
+  sl.registerFactory(() => StoreCubit(
+        getStoreUseCase: sl(),
+        getProductsUseCase: sl(),
+      ));
 
   // * USECASES
   // store
   sl.registerFactory(() => GetStoresUseCase(storeRepo: sl()));
   sl.registerFactory(() => GetStoreUseCase(storeRepo: sl()));
+
+  // product
+  sl.registerFactory(() => GetProductUseCase(productRepo: sl()));
+  sl.registerFactory(() => GetProductsUseCase(productRepo: sl()));
 
   // promo
   sl.registerFactory(() => GetPromosUseCase(promoRepo: sl()));
@@ -44,6 +56,9 @@ Future<void> init() async {
   sl.registerFactory<PromoRepo>(() => PromoRepoImpl(
         promoMockDataSource: sl(),
       ));
+  sl.registerFactory<ProductRepo>(() => ProductRepoImpl(
+        productMockDataSource: sl(),
+      ));
 
   // * DATA SOURCES LOCAL
   // store mock data
@@ -52,6 +67,11 @@ Future<void> init() async {
   );
   sl.registerFactory<PromoMockDataSource>(
     () => PromoMockDataSourceImpl(),
+  );
+
+  // product mock data
+  sl.registerFactory<ProductMockDataSource>(
+    () => ProductMockDataSourceImpl(),
   );
 
   // user isar

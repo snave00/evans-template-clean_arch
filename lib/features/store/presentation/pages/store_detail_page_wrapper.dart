@@ -23,6 +23,7 @@ class StoreDetailPageWrapper extends StatelessWidget {
       child: BlocListener<StoreCubit, StoreState>(
         listener: (ctx, state) {
           _handleStoreDetailStatus(context: ctx, theme: theme, state: state);
+          _handleStoreProductsStatus(context: ctx, theme: theme, state: state);
         },
         child: const StoreDetailPage(),
       ),
@@ -42,6 +43,29 @@ class StoreDetailPageWrapper extends StatelessWidget {
       case StoreDetailStatus.getStoreSuccess:
         return;
       case StoreDetailStatus.failure:
+        showSnackBar(
+          context: context,
+          theme: theme,
+          isSuccess: false,
+          message: state.errorMessage ?? '',
+        );
+        return;
+    }
+  }
+
+  void _handleStoreProductsStatus({
+    required BuildContext context,
+    required ThemeData theme,
+    required StoreState state,
+  }) async {
+    switch (state.storeProductsStatus) {
+      case StoreProductsStatus.initial:
+        return;
+      case StoreProductsStatus.getProductsLoading:
+        return;
+      case StoreProductsStatus.getProductsSuccess:
+        return;
+      case StoreProductsStatus.failure:
         showSnackBar(
           context: context,
           theme: theme,
