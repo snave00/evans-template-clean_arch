@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/presentation/widgets/gesture/hide_keyboard_on_tap.dart';
 import '../widgets/store_detail_app_bar/store_detail_sliver_app_bar.dart';
 import '../widgets/store_detail_header.dart';
+import '../widgets/store_detail_product.dart/store_detail_products_list.dart';
 
 class StoreDetailPage extends StatelessWidget {
   const StoreDetailPage({super.key});
@@ -17,34 +18,11 @@ class StoreDetailPage extends StatelessWidget {
               StoreDetailSliverAppBar(),
               SliverMainAxisGroup(
                 slivers: [
+                  // header
                   StoreDetailHeader(),
-                  // SliverToBoxAdapter(
-                  //   child: Container(
-                  //     color: Colors.purple,
-                  //     height: 300,
-                  //   ),
-                  // ),
-                  // const Spacing.vertical(size: SpacingSize.l, isSliver: true),
-                  // SliverToBoxAdapter(
-                  //   child: Container(
-                  //     color: Colors.red,
-                  //     height: 300,
-                  //   ),
-                  // ),
-                  // const Spacing.vertical(size: SpacingSize.l, isSliver: true),
-                  // SliverToBoxAdapter(
-                  //   child: Container(
-                  //     color: Colors.amber,
-                  //     height: 300,
-                  //   ),
-                  // ),
-                  // const Spacing.vertical(size: SpacingSize.l, isSliver: true),
-                  // SliverToBoxAdapter(
-                  //   child: Container(
-                  //     color: Colors.black,
-                  //     height: 300,
-                  //   ),
-                  // ),
+
+                  // products
+                  StoreDetailProductsList(),
                 ],
               ),
 

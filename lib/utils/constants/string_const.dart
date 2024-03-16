@@ -57,8 +57,11 @@ class StringConst {
   static const String emptyStateIcon2 = '🙈';
   static const String emptyStateIcon3 = '💰';
   static const String emptyStateIcon4 = '📖';
+  static const String emptyStateIcon5 = '🤷‍♂️';
+  static const String emptyStateIcon6 = '🤔';
   static const String noRestaurantsFound = 'No restaurants found';
   static const String noPromosFound = 'No promos found';
+  static const String noProductsFound = 'No products found';
 
   // * Terms & Privacy
   static const String termsPrivacyMessage =

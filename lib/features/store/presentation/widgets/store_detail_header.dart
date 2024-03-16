@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../../core/presentation/widgets/progress/custom_circular_progress.dart';
 import '../../../../core/presentation/widgets/spacing/spacing.dart';
 import '../../../../utils/constants/widget_const.dart';
+import '../../domain/entities/store_entity.dart';
 import '../cubit/cubit/store_cubit.dart';
 
 class StoreDetailHeader extends StatelessWidget {
@@ -22,31 +24,46 @@ class StoreDetailHeader extends StatelessWidget {
         child: BlocBuilder<StoreCubit, StoreState>(
           builder: (ctx, state) {
             final store = state.store;
+            final storeDetailStatus = state.storeDetailStatus;
 
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // store name
-                Text(
-                  store.storeName,
-                  style: theme.textTheme.titleMedium,
-                ),
+            if (storeDetailStatus == StoreDetailStatus.getStoreLoading) {
+              return _buildLoadingState();
+            }
 
-                // store desc
-                Text(store.storeDesc),
-                const Spacing.vertical(size: SpacingSize.xs),
-
-                // rating & distance
-                _buildRatingAndDistance(
-                  theme: theme,
-                  rating: store.rating,
-                  distance: store.distance,
-                ),
-              ],
+            return _buildLoadedState(
+              theme: theme,
+              store: store,
             );
           },
         ),
       ),
+    );
+  }
+
+  Widget _buildLoadedState({
+    required ThemeData theme,
+    required StoreEntity store,
+  }) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // store name
+        Text(
+          store.storeName,
+          style: theme.textTheme.titleMedium,
+        ),
+
+        // store desc
+        Text(store.storeDesc),
+        const Spacing.vertical(size: SpacingSize.xs),
+
+        // rating & distance
+        _buildRatingAndDistance(
+          theme: theme,
+          rating: store.rating,
+          distance: store.distance,
+        ),
+      ],
     );
   }
 
@@ -77,6 +94,15 @@ class StoreDetailHeader extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildLoadingState() {
+    return const Padding(
+      padding: EdgeInsets.all(WidgetPadding.paddingL),
+      child: CustomCircularProgress(
+        progressSize: ProgressSize.medium,
+      ),
     );
   }
 }

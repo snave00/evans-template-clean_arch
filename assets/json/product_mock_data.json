@@ -20,26 +20,6 @@
         "isAvailable": true
     },
     {
-        "productId": "3",
-        "storeId": "1",
-        "productCategory": "Main dish",
-        "productName": "Nasi Lemak Ayam",
-        "productDesc": "Malaysian Inspired dish, rice in coconut & fried Chicken",
-        "productPrice": "170.00",
-        "productImage": "",
-        "isAvailable": true
-    },
-    {
-        "productId": "4",
-        "storeId": "1",
-        "productCategory": "Main dish",
-        "productName": "Mee Goreng",
-        "productDesc": "Malaysian Inspired, fried noodles malaysian style",
-        "productPrice": "90.00",
-        "productImage": "",
-        "isAvailable": true
-    },
-    {
         "productId": "5",
         "storeId": "2",
         "productCategory": "Beef Biryani",
