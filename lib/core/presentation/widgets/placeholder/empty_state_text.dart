@@ -1,7 +1,9 @@
-import 'package:evans_template/core/presentation/widgets/icon/emoji_icon_widget.dart';
-import 'package:evans_template/utils/constants/string_const.dart';
-import 'package:evans_template/utils/constants/widget_const.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../utils/constants/string_const.dart';
+import '../../../../utils/constants/widget_const.dart';
+import '../icon/emoji_icon_widget.dart';
+import '../spacing/spacing.dart';
 
 class EmptyStateText extends StatelessWidget {
   final Widget? emptyStateIcon;
@@ -25,7 +27,7 @@ class EmptyStateText extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             emptyStateIcon ?? _buildDefaultIcon(theme: theme),
-            const SizedBox(height: WidgetMargin.marginS),
+            const Spacing.vertical(size: SpacingSize.s),
             Text(
               emptyStateText,
               style: theme.textTheme.bodyMedium?.copyWith(

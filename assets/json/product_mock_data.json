@@ -1,0 +1,152 @@
+[
+    {
+        "productId": "1",
+        "storeId": "1",
+        "productCategory": "Special Iced Tapay",
+        "productName": "Regular Special Iced Tapay",
+        "productDesc": "Special iced tapay",
+        "productPrice": "90.00",
+        "productImage": "https://cdn.zouq.online/common/491f36f7-0ed2-43cd-a7d5-0b9c21876236.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "2",
+        "storeId": "1",
+        "productCategory": "Special Iced Tapay",
+        "productName": "With ice cream Special Iced Tapay",
+        "productDesc": "Special iced tapay",
+        "productPrice": "110.00",
+        "productImage": "https://cdn.zouq.online/common/805a4585-572a-469e-8153-5796d19f1284.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "5",
+        "storeId": "2",
+        "productCategory": "Beef Biryani",
+        "productName": "Beef Biryani - Solo",
+        "productDesc": "Discover the Taste Authentic 200G +1/2 Brice",
+        "productPrice": "260.00",
+        "productImage": "https://cdn.zouq.online/common/bb6ff916-7c88-4961-a5a8-671839b22aa8.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "6",
+        "storeId": "2",
+        "productCategory": "Beef Biryani",
+        "productName": "Beef Biryani - Duo",
+        "productDesc": "Discover the Taste Authentic 400G +3 C Brice",
+        "productPrice": "515.00",
+        "productImage": "https://cdn.zouq.online/common/a28e883a-7978-4779-9f26-a6e5c5f53db4.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "7",
+        "storeId": "2",
+        "productCategory": "Samboussa",
+        "productName": "Samboussa Beef 4 pcs",
+        "productDesc": "Samboussa Wrapper With Beef Filling",
+        "productPrice": "120.00",
+        "productImage": "https://cdn.zouq.online/common/4a4d0d3d-cf03-4651-98cd-293b4788402c.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "8",
+        "storeId": "2",
+        "productCategory": "Samboussa",
+        "productName": "Samboussa Cheese 4 pcs",
+        "productDesc": "Samboussa Wrapper With Cheese filling",
+        "productPrice": "120.00",
+        "productImage": "https://cdn.zouq.online/common/574aed29-df13-42f8-91f2-39fd6aab664e.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "9",
+        "storeId": "3",
+        "productCategory": "Main Menu",
+        "productName": "Bellas Spicy Buttered Chicken",
+        "productDesc": "Spicy Buttered Chicken",
+        "productPrice": "230.00",
+        "productImage": "https://cdn.zouq.online/common/85b270d9-7ec4-465c-9334-3dde0ea55379.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "10",
+        "storeId": "3",
+        "productCategory": "Main Menu",
+        "productName": "Pyarn sa Palapa a Tilapia",
+        "productDesc": "Tilapia",
+        "productPrice": "160.00",
+        "productImage": "https://cdn.zouq.online/common/4a4df20f-4c73-4b4c-ba1f-bf193d85cd56.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "11",
+        "storeId": "3",
+        "productCategory": "Main Menu",
+        "productName": "Spicy Buttered Shrimp",
+        "productDesc": "Shrimp made with sweet chili sauce and spices.",
+        "productPrice": "310.00",
+        "productImage": "https://cdn.zouq.online/common/94b2e78c-9d92-45e1-8ffe-41864eef7718.jpeg",
+        "isAvailable": true
+    },
+    {
+        "productId": "12",
+        "storeId": "4",
+        "productCategory": "Filipino Cuisine",
+        "productName": "Adobong Manok",
+        "productDesc": "Chicken Adobo is a type of Filipino chicken stew. Chicken pieces are marinated in soy sauce and spices.",
+        "productPrice": "60.00",
+        "productImage": "https://cdn.zouq.online/common/1144d0f1-3b2c-49e1-9850-5746523ffa59.jpeg",
+        "isAvailable": true
+    },
+    {
+        "productId": "13",
+        "storeId": "4",
+        "productCategory": "Filipino Cuisine",
+        "productName": "Adobong Pusit",
+        "productDesc": "Tasty squid dish cooked using the popular Filipino adobo method.",
+        "productPrice": "60.00",
+        "productImage": "https://cdn.zouq.online/common/af8d3bb8-e164-41e0-8ba9-8067943e5bb8.jpeg",
+        "isAvailable": true
+    },
+    {
+        "productId": "14",
+        "storeId": "4",
+        "productCategory": "Tausug Cuisine",
+        "productName": "Fish w/ Sambal Sauce",
+        "productDesc": "Fish made w/ Sambal Sauce",
+        "productPrice": "70.00",
+        "productImage": "https://cdn.zouq.online/common/8f21b2c5-2412-4b29-a42c-3c2f0f40c2d0.jpeg",
+        "isAvailable": true
+    },
+    {
+        "productId": "15",
+        "storeId": "4",
+        "productCategory": "Tausug Cuisine",
+        "productName": "Chicken Curry",
+        "productDesc": "Chicken Curry",
+        "productPrice": "60.00",
+        "productImage": "https://cdn.zouq.online/common/766eb772-adcc-471a-bda9-ff5425d35842.jpeg",
+        "isAvailable": true
+    },
+    {
+        "productId": "16",
+        "storeId": "5",
+        "productCategory": "Mediterranean Cuisine",
+        "productName": "Chicken Shawarma",
+        "productDesc": "This super easy Chicken Shawarma recipe is a classic Mediterranean-inspired dish loaded with tons of spices and baked until golden brown",
+        "productPrice": "220.00",
+        "productImage": "https://cdn.zouq.online/common/b4d3a17f-3e80-4d22-b309-2308c081b8b6.jpg",
+        "isAvailable": true
+    },
+    {
+        "productId": "17",
+        "storeId": "5",
+        "productCategory": "Mediterranean Cuisine",
+        "productName": "Mandi Mutton",
+        "productDesc": "This is probably the easiest preparation you’ll see of lamb Mandi, and it gives you great results- fluffy rice cooked at the same time as tender pull apart lamb shoulder, simple, just a little bit exotic and plenty delicious!",
+        "productPrice": "565.00",
+        "productImage": "https://cdn.zouq.online/common/b201669f-d5a7-4eed-bbd3-f3af0099f1a7.jpg",
+        "isAvailable": true
+    }
+]

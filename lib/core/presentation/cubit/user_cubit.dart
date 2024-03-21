@@ -23,7 +23,7 @@ class UserCubit extends Cubit<UserState> {
 
   void _loading() {
     emit(state.copyWith(
-      userStatus: UserStatus.initial,
+      userStatus: UserStatus.loading,
       successMessage: '',
       errorMessage: '',
     ));

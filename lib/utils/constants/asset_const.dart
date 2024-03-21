@@ -29,4 +29,14 @@ class AssetConst {
       '${pngPath}ic_moneyfest_logo_word_light.png';
   static const icMoneyfestLogoWordDark =
       '${pngPath}ic_moneyfest_logo_word_dark.png';
+  static const icFood = '${pngPath}ic_food.png';
+  static const icCourier = '${pngPath}ic_courier.png';
+  static const icMart = '${pngPath}ic_mart.png';
+  static const icCar = '${pngPath}ic_car.png';
+  static const icAll = '${pngPath}ic_all.png';
+
+  // * JSON
+  static const storeMockData = '${jsonPath}store_mock_data.json';
+  static const promoMockData = '${jsonPath}promo_mock_data.json';
+  static const productMockData = '${jsonPath}product_mock_data.json';
 }

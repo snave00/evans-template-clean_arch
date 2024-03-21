@@ -53,6 +53,7 @@ class WidgetSize {
   static const double s1 = 1.0;
   static const double s5 = 5.0;
   static const double s8 = 8.0;
+  static const double s10 = 10.0;
   static const double s12 = 12.0;
   static const double s16 = 16.0; // small icon size
   static const double s24 = 24.0; // medium icon size
@@ -71,13 +72,16 @@ class WidgetSize {
   static const double s96 = 96.0;
   static const double s100 = 100.0;
   static const double s140 = 140.0;
+  static const double s180 = 180.0;
+  static const double s200 = 200.0;
+  static const double s210 = 210.0;
 
   static const double appBarHeight = 56.0;
 }
 
 class PagePadding {
   PagePadding._();
-  static const double pagePadding = 24.0;
+  static const double pagePadding = 16.0;
 }
 
 class WidgetAnimation {

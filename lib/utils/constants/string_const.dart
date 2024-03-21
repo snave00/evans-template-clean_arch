@@ -23,9 +23,11 @@ class StringConst {
   static const String no = 'No';
   static const String edit = 'Edit';
   static const String select = 'Select';
-  static const String search = 'Search';
   static const String delete = 'Delete';
   static const String deleted = 'Deleted';
+  static const String viewAll = 'View all';
+  static const String search = 'Search';
+  static const String searchForDishes = 'Search for dishes & restaurants...';
 
   // * Common Text
   static const String loading = 'Loading...';
@@ -43,15 +45,23 @@ class StringConst {
   static const String youreAlreadyInDevMode = 'You\'re already in dev mode';
   static const String and = 'and';
   static const String pro = 'Pro';
+  static const String goodMorning = 'Good morning!';
 
   static const String zeroCurrency = '0.00';
   static const String zero = '0';
+  static const String dummy1kPesos = '₱ 1,000.00';
+  static const String dummy100Pesos = '₱ 100.00';
 
   // * Placeholder
   static const String emptyStateIcon = '🍃';
   static const String emptyStateIcon2 = '🙈';
   static const String emptyStateIcon3 = '💰';
   static const String emptyStateIcon4 = '📖';
+  static const String emptyStateIcon5 = '🤷‍♂️';
+  static const String emptyStateIcon6 = '🤔';
+  static const String noRestaurantsFound = 'No restaurants found';
+  static const String noPromosFound = 'No promos found';
+  static const String noProductsFound = 'No products found';
 
   // * Terms & Privacy
   static const String termsPrivacyMessage =
@@ -65,4 +75,15 @@ class StringConst {
   static const String cart = 'Cart';
   static const String messages = 'Messages';
   static const String account = 'Account';
+
+  // * Home
+  static const String restaurantsYouMayLike = 'Restaurants you may like';
+  static const String promos = 'Promos';
+  static const String balance = 'Balance';
+  static const String points = 'Points';
+  static const String food = 'Food';
+  static const String mart = 'Mart';
+  static const String courier = 'Courier';
+  static const String car = 'Car';
+  static const String all = 'All';
 }

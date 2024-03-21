@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../utils/constants/asset_const.dart';
 import '../../../../utils/constants/string_const.dart';
 import '../../../../utils/constants/widget_const.dart';
+import '../spacing/spacing.dart';
 import '../text/pro_label.dart';
 
 enum AppLogoType {
@@ -52,7 +53,7 @@ class AppLogo extends StatelessWidget {
     }
 
     if (appLogoType == AppLogoType.nameLogo) {
-      return _buildNameLogo(isDarkMode: isDarkMode);
+      return _buildNameLogo(theme: theme, isDarkMode: isDarkMode);
     }
 
     return Container();
@@ -160,22 +161,34 @@ class AppLogo extends StatelessWidget {
     );
   }
 
-  Widget _buildNameLogo({required bool isDarkMode}) {
-    const defaultSize = WidgetSize.s140;
+  Widget _buildNameLogo({required ThemeData theme, required bool isDarkMode}) {
+    // const defaultSize = WidgetSize.s140;
     return Row(
       children: [
+        // using text
         SizedBox(
-          width: size ?? defaultSize,
-          child: Image(
-            // default image
-            image: AssetImage(
-              isDarkMode
-                  ? AssetConst.icMoneyfestLogoWordDark
-                  : AssetConst.icMoneyfestLogoWordLight,
+          child: Text(
+            StringConst.goodMorning,
+            style: theme.textTheme.titleLarge?.copyWith(
+              color: theme.colorScheme.primary,
             ),
           ),
         ),
-        if (showProLabel ?? false) const SizedBox(width: WidgetMargin.marginS),
+
+        // using image
+        // SizedBox(
+        //   width: size ?? defaultSize,
+        //   child: Image(
+        //     // default image
+        //     image: AssetImage(
+        //       isDarkMode
+        //           ? AssetConst.icMoneyfestLogoWordDark
+        //           : AssetConst.icMoneyfestLogoWordLight,
+        //     ),
+        //   ),
+        // ),
+        if (showProLabel ?? false)
+          const Spacing.horizontal(size: SpacingSize.s),
         if (showProLabel ?? false) const ProLabel(),
       ],
     );

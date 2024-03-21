@@ -1,0 +1,20 @@
+[
+  {
+    "promoId": "1",
+    "promoName": "Weekend Special",
+    "promoDesc": "Get 20% off on all orders above ₱500 this weekend!",
+    "bannerImage": "https://example.com/promo1.jpg"
+  },
+  {
+    "promoId": "2",
+    "promoName": "First Order Discount",
+    "promoDesc": "New users get ₱60 off on their first order. Use code NEWUSER60.",
+    "bannerImage": "https://example.com/promo2.jpg"
+  },
+  {
+    "promoId": "3",
+    "promoName": "Family Bundle",
+    "promoDesc": "Enjoy a family meal with our special bundle offer! Save up to 30%.",
+    "bannerImage": "https://example.com/promo3.jpg"
+  }
+]

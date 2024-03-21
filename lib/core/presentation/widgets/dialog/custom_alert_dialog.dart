@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../utils/constants/widget_const.dart';
+import '../spacing/spacing.dart';
 
 class CustomAlertDialog extends StatelessWidget {
   final Widget? icon;
@@ -35,7 +36,7 @@ class CustomAlertDialog extends StatelessWidget {
             children: [
               // icon
               if (icon != null) icon ?? Container(),
-              if (icon != null) const SizedBox(height: WidgetMargin.marginM),
+              if (icon != null) const Spacing.vertical(size: SpacingSize.m),
 
               // title
               if (title != null)
@@ -44,7 +45,7 @@ class CustomAlertDialog extends StatelessWidget {
                   style: theme.textTheme.titleMedium,
                   textAlign: TextAlign.center,
                 ),
-              if (title != null) const SizedBox(height: WidgetMargin.marginS),
+              if (title != null) const Spacing.vertical(size: SpacingSize.s),
 
               // content
               if (content != null)
@@ -53,7 +54,7 @@ class CustomAlertDialog extends StatelessWidget {
                   style: theme.textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),
-              if (content != null) const SizedBox(height: WidgetMargin.marginM),
+              if (content != null) const Spacing.vertical(size: SpacingSize.m),
 
               // button actions
               Row(

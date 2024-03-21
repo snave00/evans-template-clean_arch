@@ -26,19 +26,29 @@ class RouterConst {
   // * Query Params
   // used for root to determine if from manual login or auto login
   static const shellOrigin = 'shell-origin';
+
+  // used for displaying store detail
+  static const storeId = 'store-id';
 }
 
 enum Pages {
   initial(routePath: '/', routeName: 'initial'),
   welcome(routePath: '/welcome', routeName: 'welcome'),
+
+  // auth
   signUp(routePath: 'signUp', routeName: 'signUp'),
   signIn(routePath: 'signIn', routeName: 'signIn'),
   emailVerification(routePath: '', routeName: 'email-verification'),
+
+  // bottom nav
   home(routePath: '/home', routeName: 'home'),
   activity(routePath: '/activity', routeName: 'activity'),
   cart(routePath: '/cart', routeName: 'cart'),
   messages(routePath: '/messages', routeName: 'messages'),
-  account(routePath: '/account', routeName: 'account');
+  account(routePath: '/account', routeName: 'account'),
+
+  // store
+  storeDetail(routePath: '/store-detail', routeName: 'store-detail');
 
   const Pages({
     required this.routePath,

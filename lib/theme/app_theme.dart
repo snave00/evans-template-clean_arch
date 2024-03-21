@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/constants/widget_const.dart';
+import 'app_color_scheme.dart';
 import 'app_textstyle.dart';
 
 /// * Centralized App's Theme
@@ -11,8 +12,8 @@ class AppTheme {
   static ThemeData buildTheme(brightness) {
     var baseTheme = ThemeData(
       brightness: brightness,
-      // colorScheme: _isDarkMode(brightness) ? darkColorScheme : lightColorScheme,
-      colorSchemeSeed: Colors.blue,
+      colorScheme: _isDarkMode(brightness) ? darkColorScheme : lightColorScheme,
+      // colorSchemeSeed: Colors.blue,
       pageTransitionsTheme: pageTransitionsTheme,
     );
 
@@ -165,12 +166,13 @@ class AppTheme {
         borderSide: BorderSide.none,
       ),
       focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(WidgetBorderRadius.border12),
-          borderSide: BorderSide(
-            color: baseTheme.colorScheme.primary,
-          )),
+        borderRadius: BorderRadius.circular(WidgetBorderRadius.border12),
+        borderSide: BorderSide(
+          color: baseTheme.colorScheme.primary,
+        ),
+      ),
       contentPadding: const EdgeInsets.all(
-        WidgetPadding.paddingM,
+        WidgetPadding.paddingS,
       ),
     );
   }

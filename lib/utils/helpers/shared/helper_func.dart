@@ -14,7 +14,9 @@ Future<void> showProgressDialog({required BuildContext context}) async {
     context: context,
     barrierDismissible: false,
     builder: (ctx) {
-      return const CustomCircularProgress();
+      return const CustomCircularProgress(
+        progressSize: ProgressSize.large,
+      );
     },
   );
 }
