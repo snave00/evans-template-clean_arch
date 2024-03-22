@@ -10,7 +10,7 @@ class AssetConst {
   static const env = 'assets/configs/.env';
 
   // * Svg
-  static const icMoneyFestLogo = '${svgPath}ic_moneyfest_logo.svg';
+  static const icAppLogoSvg = '${svgPath}ic_app_logo.svg';
   static const icHomeSelected = '${svgPath}ic_home_selected.svg';
   static const icHomeUnSelected = '${svgPath}ic_home_unselected.svg';
   static const icExploreSelected = '${svgPath}ic_explore_selected.svg';
@@ -25,10 +25,9 @@ class AssetConst {
   static const icAccountUnSelected = '${svgPath}ic_account_unselected.svg';
 
   // * PNG
-  static const icMoneyfestLogoWordLight =
-      '${pngPath}ic_moneyfest_logo_word_light.png';
-  static const icMoneyfestLogoWordDark =
-      '${pngPath}ic_moneyfest_logo_word_dark.png';
+  static const icAppLogoOnlyPng = '${pngPath}ic_app_logo_only.png';
+  static const icAppLogoWordLight = '${pngPath}ic_app_logo_word_light.png';
+  static const icAppLogoWordDark = '${pngPath}ic_app_logo_word_dark.png';
   static const icFood = '${pngPath}ic_food.png';
   static const icCourier = '${pngPath}ic_courier.png';
   static const icMart = '${pngPath}ic_mart.png';

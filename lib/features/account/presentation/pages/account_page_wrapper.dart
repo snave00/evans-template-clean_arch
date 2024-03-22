@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/presentation/widgets/icon/app_logo.dart';
+
 class AccountPageWrapper extends StatelessWidget {
   const AccountPageWrapper({
     super.key,
@@ -9,7 +11,7 @@ class AccountPageWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Account Page'),
+        child: AppLogo(appLogoType: AppLogoType.logoOnly),
       ),
     );
   }

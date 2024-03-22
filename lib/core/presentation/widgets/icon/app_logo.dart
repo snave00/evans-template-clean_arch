@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../utils/constants/asset_const.dart';
 import '../../../../utils/constants/string_const.dart';
@@ -65,10 +64,7 @@ class AppLogo extends StatelessWidget {
     return SizedBox(
       width: size ?? defaultSize,
       height: size ?? defaultSize,
-      child: SvgPicture.asset(
-        AssetConst.icMoneyFestLogo,
-        alignment: Alignment.center,
-      ),
+      child: _buildLogoImage(),
     );
   }
 
@@ -86,10 +82,7 @@ class AppLogo extends StatelessWidget {
           width: outlinedStrokeWidth ?? 2,
         ),
       ),
-      child: SvgPicture.asset(
-        AssetConst.icMoneyFestLogo,
-        alignment: Alignment.center,
-      ),
+      child: _buildLogoImage(),
     );
   }
 
@@ -104,10 +97,7 @@ class AppLogo extends StatelessWidget {
         color: theme.colorScheme.primary,
         shape: BoxShape.circle,
       ),
-      child: SvgPicture.asset(
-        AssetConst.icMoneyFestLogo,
-        alignment: Alignment.center,
-      ),
+      child: _buildLogoImage(),
     );
   }
 
@@ -154,10 +144,7 @@ class AppLogo extends StatelessWidget {
         color: theme.colorScheme.primary,
         borderRadius: BorderRadius.circular(radius),
       ),
-      child: SvgPicture.asset(
-        AssetConst.icMoneyFestLogo,
-        alignment: Alignment.center,
-      ),
+      child: _buildLogoImage(),
     );
   }
 
@@ -175,22 +162,22 @@ class AppLogo extends StatelessWidget {
           ),
         ),
 
-        // using image
-        // SizedBox(
-        //   width: size ?? defaultSize,
-        //   child: Image(
-        //     // default image
-        //     image: AssetImage(
-        //       isDarkMode
-        //           ? AssetConst.icMoneyfestLogoWordDark
-        //           : AssetConst.icMoneyfestLogoWordLight,
-        //     ),
-        //   ),
-        // ),
         if (showProLabel ?? false)
           const Spacing.horizontal(size: SpacingSize.s),
         if (showProLabel ?? false) const ProLabel(),
       ],
     );
+  }
+
+  Widget _buildLogoImage() {
+    return const Image(
+      image: AssetImage(
+        AssetConst.icAppLogoOnlyPng,
+      ),
+    );
+    // return SvgPicture.asset(
+    //   AssetConst.icAppLogoSvg,
+    //   alignment: Alignment.center,
+    // );
   }
 }
